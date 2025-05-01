@@ -75,7 +75,7 @@ function Footer() {
             © 2025 AI CV Builder. Tüm hakları saklıdır.
           </p>
           <div className="flex space-x-6">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://github.com/Tuna-kod/AI-CV-BUILDER" target="_blank" rel="noopener noreferrer" 
               className="text-gray-400 hover:text-white transition-colors">
               <Github className="h-5 w-5" />
             </a>
