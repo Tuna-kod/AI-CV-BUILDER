@@ -1,0 +1,27 @@
+
+# node_modules klasörünü yok say
+node_modules/
+
+# build çıktıları
+dist/
+build/
+
+# geçici dosyalar
+*.log
+*.tmp
+
+# çevresel değişkenler
+.env
+
+# IDE ayar dosyaları
+.vscode/
+.idea/
+
+# MacOS dosyaları
+.DS_Store
+
+# Windows thumbnail cache
+Thumbs.db
+
+# local development dosyaları
+*.local
