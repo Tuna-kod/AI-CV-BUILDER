@@ -21,7 +21,7 @@ function Dashboard() {
           className="bg-white rounded-lg shadow-lg p-6 mb-8"
         >
           <h2 className="text-2xl font-bold mb-4">Hoş Geldiniz</h2>
-          <p className="text-gray-600 mb-4">
+          <p className="text-purple-800 mb-4">
             Mevcut Krediniz: <span className="font-bold">{credits}</span>
           </p>
           <Link to="/cv-builder">
