@@ -121,8 +121,6 @@ function Home() {
       3D Secure ile bilgileriniz güven altında ödeme sağlayın.
     </p>
   </div>
-
-
       </div>
         </div>
       </motion.div>
