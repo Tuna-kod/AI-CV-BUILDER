@@ -109,8 +109,8 @@ function Home() {
               CV'nizi profesyonel standartlara uygun şekilde otomatik düzenler.
             </p>
           </div>
-          <div className="md:col-span-2 flex justify-center mt-8 mb-8">
-      <div className="glass-card p-6 rounded-lg text-center max-w-sm">
+          <div className="md:col-span-2 flex justify-center mt-8">
+      <div className="glass-card p-6 rounded-lg text-center max-w-sm mb-8">
         <img
           alt="Payment methods"
           className="mx-auto mb-4 w-20 h-auto border-2 rounded"
