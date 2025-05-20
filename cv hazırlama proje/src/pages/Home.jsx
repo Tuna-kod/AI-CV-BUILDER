@@ -109,21 +109,21 @@ function Home() {
               CV'nizi profesyonel standartlara uygun şekilde otomatik düzenler.
             </p>
           </div>
-          <div className="flex justify-center items-center mt-8 mb-8">
-  <div className="glass-card p-6 rounded-lg text-center">
-    <img
-      alt="Payment methods"
-      className="mx-auto mb-4 w-20 h-auto border-2 rounded"
-      src="https://images.unsplash.com/photo-1586880244543-0528a802be97"
-    />
-    <p className="text-lg font-semibold text-purple-900 mb-2 mt-2">Güvenli Ödeme</p>
-    <p className="text-purple-800">
-      3D Secure ile bilgileriniz güven altında ödeme sağlayın.
-    </p>
-  </div>
+          <div className="md:col-span-2 flex justify-center mt-8">
+      <div className="glass-card p-6 rounded-lg text-center max-w-sm">
+        <img
+          alt="Payment methods"
+          className="mx-auto mb-4 w-20 h-auto border-2 rounded"
+          src="https://images.unsplash.com/photo-1586880244543-0528a802be97"
+        />
+        <p className="text-lg font-semibold text-purple-900 mb-2 mt-2">Güvenli Ödeme</p>
+        <p className="text-purple-800">
+          3D Secure ile bilgileriniz güven altında ödeme sağlayın.
+        </p>
       </div>
-        </div>
-      </motion.div>
+    </div>
+  </div>
+</motion.div>
 
       
     </div>
