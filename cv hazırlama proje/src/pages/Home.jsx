@@ -109,6 +109,15 @@ function Home() {
               CV'nizi profesyonel standartlara uygun şekilde otomatik düzenler.
             </p>
           </div>
+          <div className="mt-8 text-center mb-8">
+      <div className="glass-card p-6 rounded-lg">
+        <img alt="Payment methods" className="h-8 mx-auto border-2 rounded h-auto w-20" src="https://images.unsplash.com/photo-1586880244543-0528a802be97" />
+        <p className="text-lg font-semibold text-purple-900 mb-2 mt-4">Güvenli Ödeme</p>
+        <p className="text-purple-800">
+              3D Secure ile bilgileriniz güven altında ödeme sağlayın.
+            </p>
+        </div>
+      </div>
         </div>
       </motion.div>
 
