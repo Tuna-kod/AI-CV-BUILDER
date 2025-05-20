@@ -112,10 +112,7 @@ function Home() {
         </div>
       </motion.div>
 
-      <div className="mt-20 text-center mb-8">
-        <img alt="Payment methods" className="h-8" src="https://images.unsplash.com/photo-1586880244543-0528a802be97" />
-        <p className="text-sm text-purple-800 mt-2">Güvenli Ödeme</p>
-      </div>
+      
     </div>
   );
 }

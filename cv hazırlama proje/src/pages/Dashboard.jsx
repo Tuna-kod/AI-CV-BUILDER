@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useCredit } from "@/contexts/CreditContext";
 import { motion } from "framer-motion";
-import MainLayout from "@/components/MainLayout"; // ✅ Layout eklendi
+import MainLayout from "@/components/MainLayout"; 
 
 function Dashboard() {
   const { credits, addCredits } = useCredit();
