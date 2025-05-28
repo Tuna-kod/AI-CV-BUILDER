@@ -1,6 +1,7 @@
 import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import history from 'connect-history-api-fallback'; // <== Eklendi
 
 const configHorizonsViteErrorHandler = `
 const observer = new MutationObserver((mutations) => {
@@ -82,7 +83,6 @@ const originalFetch = window.fetch;
 window.fetch = function(...args) {
 	const url = args[0] instanceof Request ? args[0].url : args[0];
 
-	// Skip WebSocket URLs
 	if (url.startsWith('ws:') || url.startsWith('wss:')) {
 		return originalFetch.apply(this, args);
 	}
@@ -91,7 +91,6 @@ window.fetch = function(...args) {
 		.then(async response => {
 			const contentType = response.headers.get('Content-Type') || '';
 
-			// Exclude HTML document responses
 			const isDocumentResponse =
 				contentType.includes('text/html') ||
 				contentType.includes('application/xhtml+xml');
@@ -106,7 +105,7 @@ window.fetch = function(...args) {
 			return response;
 		})
 		.catch(error => {
-			if (!url.match(/\.html?$/i)) {
+			if (!url.match(/\\.html?$/i)) {
 				console.error(error);
 			}
 
@@ -135,7 +134,7 @@ const addTransformIndexHtml = {
 				},
 				{
 					tag: 'script',
-					attrs: {type: 'module'},
+					attrs: { type: 'module' },
 					children: configHorizonsConsoleErrroHandler,
 					injectTo: 'head',
 				},
@@ -153,7 +152,21 @@ const addTransformIndexHtml = {
 console.warn = () => {};
 
 export default defineConfig({
-	plugins: [react(), addTransformIndexHtml],
+	plugins: [
+		react(),
+		addTransformIndexHtml,
+		{
+			name: 'html-fallback',
+			configureServer(server) {
+				server.middlewares.use(
+					history({
+						disableDotRule: true,
+						htmlAcceptHeaders: ['text/html', 'application/xhtml+xml'],
+					})
+				);
+			},
+		},
+	],
 	server: {
 		cors: true,
 		headers: {
@@ -162,7 +175,7 @@ export default defineConfig({
 		allowedHosts: true,
 	},
 	resolve: {
-		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json', ],
+		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json'],
 		alias: {
 			'@': path.resolve(__dirname, './src'),
 		},

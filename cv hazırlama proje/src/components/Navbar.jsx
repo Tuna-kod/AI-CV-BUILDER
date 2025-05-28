@@ -1,11 +1,10 @@
-
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { useCredit } from "@/contexts/CreditContext";
 import { motion } from "framer-motion";
-import { FileText, CreditCard } from "lucide-react";
+import { FileText, CreditCard, CloudSun } from "lucide-react"; // CloudSun ikonunu ekledim hava durumu için
 
 function Navbar() {
   const { user, logout } = useAuth();
@@ -13,7 +12,7 @@ function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <motion.nav 
+    <motion.nav
       className="nav-blur fixed w-full z-50 border-b border-white/10"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -33,32 +32,53 @@ function Navbar() {
           <div className="flex items-center space-x-4">
             {user ? (
               <>
-                <motion.div 
+                <motion.div
                   className="flex items-center space-x-2 bg-white/10 rounded-full px-4 py-2"
                   whileHover={{ scale: 1.05 }}
                 >
                   <CreditCard size={16} className="text-purple-300" />
-                  <span className="text-sm text-purple-100">
-                    {credits} Kredi
-                  </span>
+                  <span className="text-sm text-purple-100">{credits} Kredi</span>
                 </motion.div>
+
                 <Link to="/cv-builder">
-                  <Button variant="default" className="button-gradient hover:opacity-90 flex items-center gap-2">
+                  <Button
+                    variant="default"
+                    className="button-gradient hover:opacity-90 flex items-center gap-2"
+                  >
                     <FileText size={16} />
                     CV Hazırla
                   </Button>
                 </Link>
+
                 <Link to="/dashboard">
-                  <Button variant="ghost" className="text-purple-100 hover:text-white hover:bg-white/10">
+                  <Button
+                    variant="ghost"
+                    className="text-purple-100 hover:text-white hover:bg-white/10"
+                  >
                     Dashboard
                   </Button>
                 </Link>
+
+                <Link to="/weather">
+                  <Button
+                    variant="ghost"
+                    className="text-purple-100 hover:text-white hover:bg-white/10 flex items-center gap-1"
+                  >
+                    <CloudSun size={16} />
+                    Hava Durumu
+                  </Button>
+                </Link>
+
                 <Link to="/account">
-                  <Button variant="ghost" className="text-purple-100 hover:text-white hover:bg-white/10">
+                  <Button
+                    variant="ghost"
+                    className="text-purple-100 hover:text-white hover:bg-white/10"
+                  >
                     Profil
                   </Button>
                 </Link>
-                <Button 
+
+                <Button
                   variant="outline"
                   className="border-purple-300 text-purple-100 hover:bg-purple-900/50"
                   onClick={() => {
@@ -72,14 +92,15 @@ function Navbar() {
             ) : (
               <>
                 <Link to="/login">
-                  <Button variant="ghost" className="text-purple-100 hover:text-white hover:bg-white/10">
+                  <Button
+                    variant="ghost"
+                    className="text-purple-100 hover:text-white hover:bg-white/10"
+                  >
                     Giriş Yap
                   </Button>
                 </Link>
                 <Link to="/register">
-                  <Button className="button-gradient hover:opacity-90">
-                    Kayıt Ol
-                  </Button>
+                  <Button className="button-gradient hover:opacity-90">Kayıt Ol</Button>
                 </Link>
               </>
             )}
