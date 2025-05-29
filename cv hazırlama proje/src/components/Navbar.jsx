@@ -55,7 +55,7 @@ function Navbar() {
                     variant="ghost"
                     className="text-purple-100 hover:text-white hover:bg-white/10"
                   >
-                    Dashboard
+                    Kredi
                   </Button>
                 </Link>
 
