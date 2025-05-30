@@ -84,10 +84,19 @@ function Dashboard() {
           </motion.div>
         </div>
 
-        <div className="mt-8 text-center">
-          <img alt="Payment methods" className="h-8 mx-auto" src="https://images.unsplash.com/photo-1586880244543-0528a802be97" />
-          <p className="text-sm text-gray-500 mt-2">Güvenli Ödeme</p>
-        </div>
+        <div className="md:col-span-2 flex justify-center mt-8">
+      <div className="glass-card p-6 rounded-lg text-center max-w-sm mb-8">
+        <img
+          alt="Payment methods"
+          className="mx-auto mb-4 w-20 h-auto border-2 rounded"
+          src="https://images.unsplash.com/photo-1586880244543-0528a802be97"
+        />
+        <p className="text-lg font-semibold text-purple-900 mb-2 mt-2">Güvenli Ödeme</p>
+        <p className="text-purple-800">
+          3D Secure ile bilgileriniz güven altında ödeme sağlayın.
+        </p>
+      </div>
+    </div>
       </div>
     </div>
   );
